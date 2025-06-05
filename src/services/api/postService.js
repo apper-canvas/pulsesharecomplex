@@ -1,51 +1,205 @@
-import postsData from '../mockData/posts.json'
+const { ApperClient } = window.ApperSDK;
 
-const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms))
+const apperClient = new ApperClient({
+  apperProjectId: import.meta.env.VITE_APPER_PROJECT_ID,
+  apperPublicKey: import.meta.env.VITE_APPER_PUBLIC_KEY
+});
 
-let posts = [...postsData]
+const tableName = 'post';
+
+// All fields for display (including system fields)
+const allFields = [
+  'Name', 'Tags', 'Owner', 'CreatedOn', 'CreatedBy', 'ModifiedOn', 'ModifiedBy',
+  'content', 'image_url', 'timestamp', 'username', 'like_count', 'comment_count', 'is_liked'
+];
+
+// Only updateable fields for create/update operations
+const updateableFields = [
+  'Name', 'Tags', 'content', 'image_url', 'timestamp', 'username', 'like_count', 'comment_count', 'is_liked'
+];
 
 export const postService = {
   async getAll() {
-    await delay(300)
-    return [...posts].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+    try {
+      const params = {
+        fields: allFields,
+        orderBy: [
+          {
+            fieldName: "timestamp",
+            SortType: "DESC"
+          }
+        ],
+        pagingInfo: {
+          limit: 50,
+          offset: 0
+        }
+      };
+
+      const response = await apperClient.fetchRecords(tableName, params);
+      
+      if (!response || !response.data || response.data.length === 0) {
+        return [];
+      }
+      
+      // Map database fields to expected UI format
+      return response.data.map(post => ({
+        id: post.Id,
+        content: post.content || '',
+        imageUrl: post.image_url || '',
+        timestamp: post.timestamp || post.CreatedOn,
+        username: post.username || 'Anonymous',
+        likeCount: post.like_count || 0,
+        commentCount: post.comment_count || 0,
+        isLiked: post.is_liked || false
+      }));
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+      return [];
+    }
   },
 
   async getById(id) {
-    await delay(200)
-    const post = posts.find(p => p.id === id)
-    return post ? { ...post } : null
+    try {
+      const params = {
+        fields: allFields
+      };
+
+      const response = await apperClient.getRecordById(tableName, id, params);
+      
+      if (!response || !response.data) {
+        return null;
+      }
+
+      const post = response.data;
+      return {
+        id: post.Id,
+        content: post.content || '',
+        imageUrl: post.image_url || '',
+        timestamp: post.timestamp || post.CreatedOn,
+        username: post.username || 'Anonymous',
+        likeCount: post.like_count || 0,
+        commentCount: post.comment_count || 0,
+        isLiked: post.is_liked || false
+      };
+    } catch (error) {
+      console.error(`Error fetching post with ID ${id}:`, error);
+      return null;
+    }
   },
 
   async create(postData) {
-    await delay(400)
-    const newPost = {
-      id: Date.now(),
-      username: 'You',
-      likeCount: 0,
-      commentCount: 0,
-      isLiked: false,
-      timestamp: new Date().toISOString(),
-      ...postData
+    try {
+      // Filter to only include updateable fields
+      const filteredData = {};
+      updateableFields.forEach(field => {
+        if (postData[field] !== undefined) {
+          filteredData[field] = postData[field];
+        }
+      });
+
+      // Map UI field names to database field names
+      const record = {
+        Name: postData.title || 'Post',
+        content: postData.content || '',
+        image_url: postData.imageUrl || '',
+        timestamp: new Date().toISOString(),
+        username: postData.username || 'You',
+        like_count: 0,
+        comment_count: 0,
+        is_liked: false
+      };
+
+      const params = {
+        records: [record]
+      };
+
+      const response = await apperClient.createRecord(tableName, params);
+
+      if (response && response.success && response.results) {
+        const successfulRecords = response.results.filter(result => result.success);
+        if (successfulRecords.length > 0) {
+          const created = successfulRecords[0].data;
+          return {
+            id: created.Id,
+            content: created.content || '',
+            imageUrl: created.image_url || '',
+            timestamp: created.timestamp || created.CreatedOn,
+            username: created.username || 'You',
+            likeCount: created.like_count || 0,
+            commentCount: created.comment_count || 0,
+            isLiked: created.is_liked || false
+          };
+        }
+      }
+      
+      throw new Error('Failed to create post');
+    } catch (error) {
+      console.error("Error creating post:", error);
+      throw error;
     }
-    posts.unshift(newPost)
-    return { ...newPost }
   },
 
   async update(id, updateData) {
-    await delay(300)
-    const index = posts.findIndex(p => p.id === id)
-    if (index === -1) throw new Error('Post not found')
-    
-    posts[index] = { ...posts[index], ...updateData }
-    return { ...posts[index] }
+    try {
+      // Filter to only include updateable fields
+      const record = {
+        Id: id
+      };
+      
+      // Map UI field names to database field names for updateable fields only
+      if (updateData.content !== undefined) record.content = updateData.content;
+      if (updateData.imageUrl !== undefined) record.image_url = updateData.imageUrl;
+      if (updateData.username !== undefined) record.username = updateData.username;
+      if (updateData.likeCount !== undefined) record.like_count = updateData.likeCount;
+      if (updateData.commentCount !== undefined) record.comment_count = updateData.commentCount;
+      if (updateData.isLiked !== undefined) record.is_liked = updateData.isLiked;
+
+      const params = {
+        records: [record]
+      };
+
+      const response = await apperClient.updateRecord(tableName, params);
+
+      if (response && response.success && response.results) {
+        const successfulUpdates = response.results.filter(result => result.success);
+        if (successfulUpdates.length > 0) {
+          const updated = successfulUpdates[0].data;
+          return {
+            id: updated.Id,
+            content: updated.content || '',
+            imageUrl: updated.image_url || '',
+            timestamp: updated.timestamp || updated.CreatedOn,
+            username: updated.username || 'Anonymous',
+            likeCount: updated.like_count || 0,
+            commentCount: updated.comment_count || 0,
+            isLiked: updated.is_liked || false
+          };
+        }
+      }
+      
+      throw new Error('Failed to update post');
+    } catch (error) {
+      console.error("Error updating post:", error);
+      throw error;
+    }
   },
 
   async delete(id) {
-    await delay(250)
-    const index = posts.findIndex(p => p.id === id)
-    if (index === -1) throw new Error('Post not found')
-    
-    const deleted = posts.splice(index, 1)[0]
-    return { ...deleted }
+    try {
+      const params = {
+        RecordIds: [id]
+      };
+
+      const response = await apperClient.deleteRecord(tableName, params);
+
+      if (response && response.success) {
+        return true;
+      }
+      
+      throw new Error('Failed to delete post');
+    } catch (error) {
+      console.error("Error deleting post:", error);
+      throw error;
+    }
   }
 }
