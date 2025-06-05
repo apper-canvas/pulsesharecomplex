@@ -186,15 +186,22 @@ export const userProfileService = {
       if (response && response.success && response.results) {
         const successfulUpdates = response.results.filter(result => result.success);
         if (successfulUpdates.length > 0) {
-          const updated = successfulUpdates[0].data;
+const updated = successfulUpdates[0].data;
           return {
             id: updated.Id,
-            username: updated.username || 'Anonymous',
-            avatar: updated.avatar || '',
+            userId: updated.user_id,
+            displayName: updated.display_name || 'Anonymous',
             bio: updated.bio || '',
-            postCount: updated.post_count || 0,
+            avatarUrl: updated.avatar_url || '',
+            coverImageUrl: updated.cover_image_url || '',
+            location: updated.location || '',
+            website: updated.website || '',
+            birthDate: updated.birth_date || null,
             followerCount: updated.follower_count || 0,
-            followingCount: updated.following_count || 0
+            followingCount: updated.following_count || 0,
+            postCount: updated.post_count || 0,
+            isVerified: updated.is_verified || false,
+            privacySettings: updated.privacy_settings ? JSON.parse(updated.privacy_settings) : {}
           };
         }
       }

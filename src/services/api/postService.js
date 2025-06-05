@@ -145,14 +145,18 @@ export const postService = {
       const record = {
         Id: id
       };
-      
-      // Map UI field names to database field names for updateable fields only
+// Map UI field names to database field names for updateable fields only
       if (updateData.content !== undefined) record.content = updateData.content;
       if (updateData.imageUrl !== undefined) record.image_url = updateData.imageUrl;
-      if (updateData.username !== undefined) record.username = updateData.username;
+      if (updateData.videoUrl !== undefined) record.video_url = updateData.videoUrl;
+      if (updateData.postType !== undefined) record.post_type = updateData.postType;
       if (updateData.likeCount !== undefined) record.like_count = updateData.likeCount;
       if (updateData.commentCount !== undefined) record.comment_count = updateData.commentCount;
-      if (updateData.isLiked !== undefined) record.is_liked = updateData.isLiked;
+      if (updateData.shareCount !== undefined) record.share_count = updateData.shareCount;
+      if (updateData.isPublic !== undefined) record.is_public = updateData.isPublic;
+      if (updateData.hashtags !== undefined) record.hashtags = JSON.stringify(updateData.hashtags);
+      if (updateData.mentions !== undefined) record.mentions = JSON.stringify(updateData.mentions);
+      if (updateData.location !== undefined) record.location = updateData.location;
 
       const params = {
         records: [record]
@@ -166,13 +170,19 @@ export const postService = {
           const updated = successfulUpdates[0].data;
           return {
             id: updated.Id,
+            userId: updated.user_id,
             content: updated.content || '',
             imageUrl: updated.image_url || '',
-            timestamp: updated.timestamp || updated.CreatedOn,
-            username: updated.username || 'Anonymous',
+            videoUrl: updated.video_url || '',
+            postType: updated.post_type || 'text',
+            timestamp: updated.CreatedOn,
             likeCount: updated.like_count || 0,
             commentCount: updated.comment_count || 0,
-            isLiked: updated.is_liked || false
+            shareCount: updated.share_count || 0,
+            isPublic: updated.is_public !== false,
+            hashtags: updated.hashtags ? JSON.parse(updated.hashtags) : [],
+            mentions: updated.mentions ? JSON.parse(updated.mentions) : [],
+            location: updated.location || ''
           };
         }
       }

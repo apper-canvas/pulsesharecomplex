@@ -179,13 +179,17 @@ export const commentService = {
       if (response && response.success && response.results) {
         const successfulUpdates = response.results.filter(result => result.success);
         if (successfulUpdates.length > 0) {
-          const updated = successfulUpdates[0].data;
+const updated = successfulUpdates[0].data;
           return {
             id: updated.Id,
             postId: updated.post_id || null,
+            userId: updated.user_id || null,
+            parentCommentId: updated.parent_comment_id || null,
             content: updated.content || '',
-            timestamp: updated.timestamp || updated.CreatedOn,
-            username: updated.username || 'Anonymous'
+            timestamp: updated.CreatedOn,
+            likeCount: updated.like_count || 0,
+            replyCount: updated.reply_count || 0,
+            isEdited: updated.is_edited || false
           };
         }
       }
