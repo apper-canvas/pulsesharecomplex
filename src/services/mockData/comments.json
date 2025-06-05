@@ -1,0 +1,163 @@
+[
+  {
+    "id": 1,
+    "postId": 1,
+    "content": "Looks amazing! What's the name of the place?",
+    "timestamp": "2024-01-15T14:45:00Z",
+    "username": "foodie_finder"
+  },
+  {
+    "id": 2,
+    "postId": 1,
+    "content": "I need to check this out! Love discovering new coffee spots ☕",
+    "timestamp": "2024-01-15T15:10:00Z",
+    "username": "caffeine_addict"
+  },
+  {
+    "id": 3,
+    "postId": 1,
+    "content": "Their pastries are incredible too! 🥐",
+    "timestamp": "2024-01-15T15:30:00Z",
+    "username": "local_expert"
+  },
+  {
+    "id": 4,
+    "postId": 2,
+    "content": "Absolutely stunning! Your photography skills are amazing 📸",
+    "timestamp": "2024-01-15T20:00:00Z",
+    "username": "photo_enthusiast"
+  },
+  {
+    "id": 5,
+    "postId": 2,
+    "content": "This makes me want to find a rooftop in my city!",
+    "timestamp": "2024-01-15T20:15:00Z",
+    "username": "sunset_chaser"
+  },
+  {
+    "id": 6,
+    "postId": 3,
+    "content": "You're inspiring me to get back to the gym! 💪",
+    "timestamp": "2024-01-15T07:30:00Z",
+    "username": "motivation_needed"
+  },
+  {
+    "id": 7,
+    "postId": 3,
+    "content": "I love morning runs! What's your favorite workout?",
+    "timestamp": "2024-01-15T08:00:00Z",
+    "username": "morning_runner"
+  },
+  {
+    "id": 8,
+    "postId": 4,
+    "content": "That looks restaurant quality! Recipe please? 🍝",
+    "timestamp": "2024-01-14T20:45:00Z",
+    "username": "pasta_lover"
+  },
+  {
+    "id": 9,
+    "postId": 4,
+    "content": "Homemade pasta hits different! Looks delicious",
+    "timestamp": "2024-01-14T21:00:00Z",
+    "username": "chef_wannabe"
+  },
+  {
+    "id": 10,
+    "postId": 5,
+    "content": "Supporting local farmers is so important! 🌱",
+    "timestamp": "2024-01-14T09:30:00Z",
+    "username": "sustainable_living"
+  },
+  {
+    "id": 11,
+    "postId": 6,
+    "content": "I was there too! What an incredible show! 🎵",
+    "timestamp": "2024-01-13T23:30:00Z",
+    "username": "concert_goer"
+  },
+  {
+    "id": 12,
+    "postId": 6,
+    "content": "Music really does bring people together ✨",
+    "timestamp": "2024-01-14T00:15:00Z",
+    "username": "music_fan"
+  },
+  {
+    "id": 13,
+    "postId": 7,
+    "content": "Perfect rainy day activity! What book are you reading?",
+    "timestamp": "2024-01-13T16:00:00Z",
+    "username": "fellow_reader"
+  },
+  {
+    "id": 14,
+    "postId": 8,
+    "content": "Thank you for taking care of our planet! 🌍",
+    "timestamp": "2024-01-13T12:30:00Z",
+    "username": "earth_lover"
+  },
+  {
+    "id": 15,
+    "postId": 8,
+    "content": "Count me in for the next cleanup! When is it?",
+    "timestamp": "2024-01-13T13:00:00Z",
+    "username": "volunteer_ready"
+  },
+  {
+    "id": 16,
+    "postId": 9,
+    "content": "Your art style is so unique! Love the colors 🎨",
+    "timestamp": "2024-01-12T16:45:00Z",
+    "username": "art_admirer"
+  },
+  {
+    "id": 17,
+    "postId": 10,
+    "content": "City photography at its finest! 📸",
+    "timestamp": "2024-01-12T22:45:00Z",
+    "username": "urban_explorer"
+  },
+  {
+    "id": 18,
+    "postId": 11,
+    "content": "Morning yoga is the best way to start the day! 🧘‍♀️",
+    "timestamp": "2024-01-12T07:00:00Z",
+    "username": "yoga_practitioner"
+  },
+  {
+    "id": 19,
+    "postId": 12,
+    "content": "Luna is such a good girl! Give her extra treats from me 🐕",
+    "timestamp": "2024-01-11T14:30:00Z",
+    "username": "dog_lover"
+  },
+  {
+    "id": 20,
+    "postId": 12,
+    "content": "Puppy training graduation is such a milestone! Congrats! 🎓",
+    "timestamp": "2024-01-11T15:00:00Z",
+    "username": "pet_parent"
+  },
+  {
+    "id": 21,
+    "postId": 13,
+    "content": "Garden-to-table tomatoes taste so much better! 🍅",
+    "timestamp": "2024-01-11T11:00:00Z",
+    "username": "gardening_tips"
+  },
+  {
+    "id": 22,
+    "postId": 14,
+    "content": "That view is incredible! What trail is this?",
+    "timestamp": "2024-01-10T17:30:00Z",
+    "username": "hiking_buddy"
+  },
+  {
+    "id": 23,
+    "postId": 15,
+    "content": "Movie night vibes! What did you watch? 🍿",
+    "timestamp": "2024-01-10T20:00:00Z",
+    "username": "film_buff"
+  }
+]

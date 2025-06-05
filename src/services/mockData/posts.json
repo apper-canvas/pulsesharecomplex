@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "content": "Just discovered this amazing coffee shop downtown! The vibes are immaculate ☕✨ #CoffeeLife #LocalFinds",
+    "imageUrl": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-15T14:30:00Z",
+    "username": "coffee_explorer",
+    "likeCount": 24,
+    "commentCount": 8,
+    "isLiked": false
+  },
+  {
+    "id": 2,
+    "content": "Sunset from my rooftop never gets old 🌅 Sometimes you need to pause and appreciate the simple moments in life",
+    "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-15T19:45:00Z",
+    "username": "skyline_dreamer",
+    "likeCount": 67,
+    "commentCount": 12,
+    "isLiked": true
+  },
+  {
+    "id": 3,
+    "content": "New workout routine is paying off! 💪 Consistency is key, friends. What's your favorite way to stay active?",
+    "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-15T07:15:00Z",
+    "username": "fitness_journey",
+    "likeCount": 89,
+    "commentCount": 23,
+    "isLiked": false
+  },
+  {
+    "id": 4,
+    "content": "Homemade pasta night! 🍝 Nothing beats the satisfaction of making everything from scratch. Recipe in my bio!",
+    "imageUrl": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-14T20:30:00Z",
+    "username": "chef_athome",
+    "likeCount": 156,
+    "commentCount": 34,
+    "isLiked": true
+  },
+  {
+    "id": 5,
+    "content": "Saturday morning market haul 🥕🥬 Supporting local farmers and getting the freshest ingredients for the week ahead!",
+    "imageUrl": "https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-14T09:00:00Z",
+    "username": "farm_to_table",
+    "likeCount": 43,
+    "commentCount": 7,
+    "isLiked": false
+  },
+  {
+    "id": 6,
+    "content": "Concert was absolutely incredible! 🎵 The energy in the crowd was electric. Music truly brings people together ✨",
+    "imageUrl": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-13T23:15:00Z",
+    "username": "music_lover",
+    "likeCount": 78,
+    "commentCount": 19,
+    "isLiked": true
+  },
+  {
+    "id": 7,
+    "content": "Rainy day productivity mode activated 🌧️📚 Perfect weather for getting lost in a good book and some hot tea",
+    "imageUrl": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-13T15:45:00Z",
+    "username": "bookworm_life",
+    "likeCount": 92,
+    "commentCount": 15,
+    "isLiked": false
+  },
+  {
+    "id": 8,
+    "content": "Beach cleanup volunteer day complete! 🏖️🗑️ Small actions can make a big difference for our planet. Who's joining next time?",
+    "imageUrl": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-13T12:00:00Z",
+    "username": "eco_warrior",
+    "likeCount": 234,
+    "commentCount": 41,
+    "isLiked": true
+  },
+  {
+    "id": 9,
+    "content": "New art piece finished! 🎨 Experimenting with mixed media has been such a fun challenge. Art keeps me sane",
+    "imageUrl": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-12T16:20:00Z",
+    "username": "creative_soul",
+    "likeCount": 67,
+    "commentCount": 28,
+    "isLiked": false
+  },
+  {
+    "id": 10,
+    "content": "City lights never fail to amaze me ✨🏙️ Late night photography walk through downtown was exactly what I needed",
+    "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-12T22:30:00Z",
+    "username": "night_photographer",
+    "likeCount": 145,
+    "commentCount": 22,
+    "isLiked": true
+  },
+  {
+    "id": 11,
+    "content": "Morning yoga session in the park 🧘‍♀️ Starting the day with mindfulness and movement sets the perfect tone",
+    "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-12T06:45:00Z",
+    "username": "mindful_mornings",
+    "likeCount": 112,
+    "commentCount": 18,
+    "isLiked": false
+  },
+  {
+    "id": 12,
+    "content": "Puppy training graduation day! 🐕🎓 So proud of Luna for mastering all her commands. She deserves all the treats!",
+    "imageUrl": "https://images.unsplash.com/photo-1552053831-71594a27632d?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-11T14:15:00Z",
+    "username": "dog_parent",
+    "likeCount": 289,
+    "commentCount": 56,
+    "isLiked": true
+  },
+  {
+    "id": 13,
+    "content": "Garden update: tomatoes are finally ripening! 🍅 There's something magical about growing your own food from seed",
+    "imageUrl": "https://images.unsplash.com/photo-1592419044706-39796d74c021?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-11T10:30:00Z",
+    "username": "urban_gardener",
+    "likeCount": 73,
+    "commentCount": 12,
+    "isLiked": false
+  },
+  {
+    "id": 14,
+    "content": "Weekend hiking adventure complete! 🥾⛰️ Nature therapy is the best therapy. Already planning the next trail to conquer",
+    "imageUrl": "https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-10T17:00:00Z",
+    "username": "trail_blazer",
+    "likeCount": 198,
+    "commentCount": 31,
+    "isLiked": true
+  },
+  {
+    "id": 15,
+    "content": "Cozy movie night setup complete 🍿🎬 Sometimes the best adventures happen right at home with good company",
+    "imageUrl": "https://images.unsplash.com/photo-1489599517772-1a35930ad239?w=600&h=400&fit=crop",
+    "timestamp": "2024-01-10T19:45:00Z",
+    "username": "movie_night",
+    "likeCount": 84,
+    "commentCount": 14,
+    "isLiked": false
+  }
+]
